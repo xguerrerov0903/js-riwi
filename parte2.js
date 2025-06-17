@@ -16,9 +16,9 @@ PI= 34;
 
 console.log(PI);
 
-/*let void= ;
+let void_val;
 
-console.log(void)*/
+console.log(void_val);
 
 let nulo= null;
 
