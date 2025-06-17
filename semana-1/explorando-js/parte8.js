@@ -1,4 +1,4 @@
-let nombre, edad, viudad;
+let nombre, edad, ciudad;
 
 nombre= prompt("Dime tu nombre: ");
 edad= prompt("Dime tu edad: ");
