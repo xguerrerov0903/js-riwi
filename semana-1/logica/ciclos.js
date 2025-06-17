@@ -22,3 +22,26 @@ for (let indice in palabra2){
     console.log(indice+" : "+palabra2[indice]);
 }
 
+// 4. Recorrer una lista de nombres usando for...of
+
+let nombres = ["Juan", "María", "Pedro", "Ana", "Carlos"];
+
+for (nombre of nombres){
+    console.log("Hola, "+nombre);
+}
+
+// 5. Imprimir índices de una lista usando for...in
+
+let colores= ["Amarillo","Azul","Rojo"];
+
+for (let indice in colores){
+    console.log(indice+" : "+colores[indice]);
+}
+
+// 6. Imprimir índice y valor de cada número en un array
+
+let numeros = [7,6,5,4,3,2,1];
+
+for (let indice in numeros){
+    console.log(indice+" : "+numeros[indice]);
+}
