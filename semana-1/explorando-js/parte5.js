@@ -1,4 +1,3 @@
-
 let numero1= prompt("Dime un numero: ");
 
 if(numero1==10){
