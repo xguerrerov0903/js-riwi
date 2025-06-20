@@ -28,7 +28,7 @@ while (true){
     }
 
     // Combierte a la variable edad en un int (si es que existen decimales los ignora y solo entrega el entero). En caso de que la cadena no sea numerica entrega NaN
-    edad= parseInt(edad);
+    edad= parseInt(edad); 
 
     // Se comprueba tanto que el valor edad sea  un numero (en el while de la entrada numerica ya se hace pero se deja ya que el ejercici se propuso originalmente con este condicional), como que sea un numero positivo
     if (isNaN(Number(edad)) || edad<0){
