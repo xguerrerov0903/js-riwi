@@ -28,7 +28,7 @@ for (const producto of setProductos){
 }
 
 console.log("Map de productos y categorias")
-// Con forEach y una funcion fechaq recorro el Map, consultare asi(valor, clave) = (producto, categoria)
+// Con forEach y una funcion fecha que apicara a cada elemento recorro el Map, consultare asi(valor, clave) = (producto, categoria)
 mapProductos.forEach((producto, categoria) => {
     // De encontrar un array recorro el array
     if (Array.isArray(producto)) {
