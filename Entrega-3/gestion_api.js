@@ -6,7 +6,7 @@ fetch(`http://localhost:3000/productos`)
 const nuevoProducto = {"id": 4, "nombre": "Monitor", "precio": 200};
 
 // No deja de ejecutarse esta agregando infinitamente elproducto si no lo paro
-
+/*
 fetch(`http://localhost:3000/productos`,{
     method: `POST`,
     headers: {"Content-Type":`application/json`},
@@ -15,6 +15,7 @@ fetch(`http://localhost:3000/productos`,{
     .then(response => response.json())
     .then(data => console.log("Productos agregado:", data))
     .catch(error => console.error("Error al agregar producto:", error))
+*/
 
 const producotActualizado = {"nombre": "Laptop", "precio": 1400};
 
