@@ -1,0 +1,22 @@
+{
+  "task": [
+    {
+      "id": "1",
+      "title": "Estudiar Fetch API",
+      "description": "Aprender a consumir APIs con JavaScript",
+      "completed": false
+    },
+    {
+      "id": "5b13",
+      "title": "hi",
+      "description": "hi",
+      "completed": true
+    },
+    {
+      "id": "2fa4",
+      "title": "ho",
+      "description": "he",
+      "completed": false
+    }
+  ]
+}
