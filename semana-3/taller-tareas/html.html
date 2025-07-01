@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+    <h1>Task list</h1>    
+    <form id="form-task">
+        <!--Task-->
+        <label for="title">Task:</label>
+        <input type="text" name="tittle" id="tittle" placeholder="Title of the task" required><br><br>
+        <!--Description-->
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Description of the task" required><br><br>
+        <!--Complete-->
+        <label for="completed">Completed:</label>
+            <label>
+                <input type="radio" name="completed" value="True" required> Yes
+            </label>
+            <label>
+                <input type="radio" name="completed" value="False" required> No
+            </label><br><br>
+        <!--Button-->              
+        <button type="submit" value="Send">Send</button><br><br>
+
+        <div id="task-list">
+            <ul id="task-list-ul">
+                <!--Tasks will be added here-->
+
+            </ul>
+            <!--Tasks will appear here-->
+
+        </div>
+    </form>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
