@@ -1,11 +1,10 @@
-
 {
   "task": [
     {
       "id": "1",
       "title": "Estudiar Fetch API",
       "description": "Aprender a consumir APIs con JavaScript",
-      "completed": false
+      "completed": true
     },
     {
       "id": "5b13",
@@ -17,7 +16,13 @@
       "id": "2fa4",
       "title": "ho",
       "description": "he",
-      "completed": false
+      "completed": true
+    },
+    {
+      "id": "6210",
+      "title": "hhh",
+      "description": "hhh",
+      "completed": true
     }
   ]
 }

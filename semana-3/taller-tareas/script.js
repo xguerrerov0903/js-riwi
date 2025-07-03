@@ -8,13 +8,14 @@ form_task.addEventListener(`submit`, function (event){
     const title = document.getElementById("tittle").value;
     const description = document.getElementById("description").value;
     // Get the value of the radio button, the buttons have the same name so for that reason we can use querySelector the get the value of the checked one
-    const completed = document.querySelector('input[name="completed"]:checked').value;
+    //const completed = document.querySelector('input[name="completed"]:checked').value;
 
     // Create the task object
     const task= {
         title: title,
         description: description,
-        completed: completed === "True"  // Convertir el string a boolean, if the value is "True" then completed will be true, otherwise it will be false
+        completed: false
+        //completed: completed === "True"  // Convertir el string a boolean, if the value is "True" then completed will be true, otherwise it will be false
     };
 
     // Log the task object to the console just to see the values
@@ -46,9 +47,43 @@ function print_tasks(tasks) {
     task_container.innerHTML = ''; // Clear the previous tasks
 
     tasks.forEach(task => {
-        task_container.innerHTML += `<li>Task: ${task.title}, Description: ${task.description}, complete: ${task.completed}</li>`;
+        if (task.completed){
+            task_container.innerHTML += `<li id="${task.id}">Task: ${task.title}, Description: ${task.description}, complete: ${task.completed}</li>`
+
+        } else {
+            task_container.innerHTML += `<li id="${task.id}">Task: ${task.title}, Description: ${task.description}, complete: ${task.completed}    <button type="button" value="complete">Completed</button></li>`
+        };
     });
 }
+
+
+let listener_completed = document.getElementById(`task-list-ul`);
+
+// Hear the event submit (button) of the form 
+listener_completed.addEventListener(`click`, function (event){
+
+    // tagName return the name un Upper
+    if (event.target.tagName === 'BUTTON') {
+        /*
+        Esto busca el elemento <li> más cercano hacia arriba en el DOM desde el botón clicado.
+
+        ¿Por qué? Porque ese <li> tiene el id de la tarea.
+
+    .   closest('li') sube por los padres del botón hasta encontrar el primer <li>.
+        */
+        const li = event.target.closest('li')
+        const id = li.id;
+
+        fetch(`http://localhost:3000/task/${id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({completed: true})
+    })
+    }
+
+})
+
 
 /*Extra info json
 
