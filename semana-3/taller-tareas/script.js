@@ -72,6 +72,8 @@ listener_completed.addEventListener(`click`, function (event){
     .   closest('li') sube por los padres del botón hasta encontrar el primer <li>.
         */
         const li = event.target.closest('li')
+        // alt
+        // const li = event.target.parentNode;
         const id = li.id;
 
         fetch(`http://localhost:3000/task/${id}`, {
