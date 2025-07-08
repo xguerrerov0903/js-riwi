@@ -1,4 +1,5 @@
 // Evento para guardar datos en el Local Storage
+let data_array = JSON.parse(localStorage.getItem('data-array')) || [];
 
 document.getElementById(`saveButton`).addEventListener('click', () => {
     const nameInput = document.getElementById(`name`);
@@ -13,13 +14,13 @@ document.getElementById(`saveButton`).addEventListener('click', () => {
     const age= parseInt(ageInput.value);
 
     if (name && !isNaN(age)) {
-        /*const infoIngreso = {
-            userName : nameInput,
-            userAge : ageInput
+        const infoIngreso = {
+            userName : name,
+            userAge : age
         }
-        localStorage.setItem()*/
-        localStorage.setItem(`userName`, name);
-        localStorage.setItem(`userAge`, age);
+        let array_info = JSON.parse(localStorage.getItem('data-array')) || [];
+        array_info.push(infoIngreso)
+        localStorage.setItem(`data-array`,  JSON.stringify(array_info))
         displayData();
     } else {
         alert(`Por favor, ingresa un nombre valido y una edad numerica.`)
@@ -27,16 +28,23 @@ document.getElementById(`saveButton`).addEventListener('click', () => {
 });
 
 // Funcion para mostrar los datos almacenados
-function displayData(){
-    const name = localStorage.getItem(`userName`);
-    const age = localStorage.getItem(`userAge`);
+function displayData() {
+    const data = JSON.parse(localStorage.getItem(`data-array`));
     const outputDiv = document.getElementById(`output`);
-    if (name && age){
-        outputDiv.textContent = `Hola ${name}, tienes ${age} años.`;
+
+    if (data && data.length > 0) {
+        let outputText = '';
+
+        data.forEach(item => {
+            outputText += `Nombre: ${item.userName}, Edad: ${item.userAge}<br>`;
+        });
+
+        outputDiv.innerHTML = outputText; // ✅ CAMBIADO de textContent a innerHTML
     } else {
         outputDiv.textContent = `No hay datos almacenados.`;
     }
 }
+
 
 // Al cargar la pagina, mostrar los datos almacenados
 
