@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrega 4</title>
-  <script src="script.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrega 4</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Formulario para ingresar nombre y edad -->
     <form id="userForm">
-        <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-        <label for="age">Edad:</label>
-            <input type="number" id="age" name="age" required>
-        <button type="button" id="saveButton">Guardar Datos</button>
-        <button type="button" id="clearButton">Limpiar Datos</button>
+      <!-- Campo para ingresar el nombre con validación de solo letras y espacios -->
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios" />
+      <!-- Campo para ingresar la edad con rango de 0 a 120 -->
+      <label for="age">Edad:</label>
+      <input type="number" id="age" name="age" required min="0" max="120" />
+      <!-- Botón para guardar los datos -->
+      <button type="submit" id="saveButton">Guardar Datos</button>
+      <!-- Botón para limpiar los datos -->
+      <button type="button" id="clearButton">Limpiar Datos</button>
     </form>
+    <!-- Div para mostrar los datos almacenados -->
     <div id="output"></div>
-</body>
+  </body>
 </html>
